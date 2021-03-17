@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardBackgroundColor="#FFE4DF"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="5dp"
+        tools:ignore="MissingConstraints">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivUserImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/person"
+                app:layout_constraintBottom_toTopOf="@+id/tvUserComment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+             <TextView
+                 android:id="@+id/tvUserName"
+                 app:layout_constraintStart_toEndOf="@id/ivUserImage"
+                 android:textColor="@color/black"
+                 android:padding="5dp"
+                 android:textStyle="bold"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvCommendTime"
+                app:layout_constraintStart_toEndOf="@id/ivUserImage"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+             <TextView
+                 android:id="@+id/tvUserComment"
+                 android:text="@string/asdasdasdasda_asdasdas_asdasdas_eqweqweqw_qweqweqwe_asdasdas_asdasdasdadsadaasdasdqweqweqweqweasd_as_dasda_asd_asdasdqw_qweqweq"
+                 app:layout_constraintTop_toBottomOf="@id/ivUserImage"
+                 android:textColor="#797777"
+                 android:padding="5dp"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/tvRemove"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tvUserComment"
+                android:padding="5dp"
+                android:layout_marginStart="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:drawableEndCompat="@drawable/ic_baseline_delete_24" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

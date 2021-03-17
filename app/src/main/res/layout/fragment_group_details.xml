@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.groupscreen.GroupDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_baseline_cloud_upload_24"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivSaveButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:visibility="invisible"
+        android:src="@drawable/ic_baseline_save_24"
+        app:layout_constraintTop_toBottomOf="@id/tvGroupCreatedBy"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toEndOf="@id/ivProfileImage"/>
+
+    <TextView
+        android:id="@+id/tvGroupTitle"
+        android:layout_width="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:drawableRight="@drawable/ic_baseline_edit_24"
+        android:hint="@string/gruppename"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@id/ivProfileImage"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCreateTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="5dp"
+        android:text="@string/ersteller"
+        app:layout_constraintStart_toEndOf="@id/ivProfileImage"
+        app:layout_constraintTop_toBottomOf="@id/tvGroupTitle"/>
+
+    <TextView
+        android:id="@+id/tvGroupCreatedBy"
+        android:layout_width="wrap_content"
+
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tvGroupTitle"
+        app:layout_constraintStart_toEndOf="@id/tvCreateTitle" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardMembersTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#FF86FC"
+        app:layout_constraintTop_toBottomOf="@id/ivProfileImage"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft">
+
+        <TextView
+            android:id="@+id/tvMembersTitle"
+            android:text="@string/mitglieder_der_gruppe"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/membersRecyclerview"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@+id/cardMembersTitle"
+        tools:listitem="@layout/search_detail_page" />
+
+    <EditText
+        android:id="@+id/auto"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:completionThreshold="1"
+        android:hint="@string/suche_nach_einem_user"
+        android:padding="7dp"
+        app:layout_constraintEnd_toStartOf="@id/inviteButton"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/membersRecyclerview"
+        android:background="@drawable/search_design"
+        tools:ignore="MissingConstraints"
+        android:drawableStart="@drawable/ic_baseline_search_24" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchEditRecyclerview"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/auto"
+        tools:listitem="@layout/search_items"/>
+
+    <ImageView
+        android:id="@+id/inviteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_add_box_24"
+        android:layout_marginTop="14dp"
+        android:text="@string/einladen"
+        app:layout_constraintStart_toEndOf="@id/auto"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@+id/membersRecyclerview" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

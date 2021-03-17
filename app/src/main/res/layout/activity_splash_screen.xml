@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.loginscreen.SplashScreen">
+
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_above="@+id/cardTitle"
+        android:layout_centerHorizontal="true"
+        android:scaleY="-1"
+        app:mwhVelocity="1"
+        app:mwhProgress="1"
+        app:mwhGradientAngle="45"
+        app:mwhWaveHeight="50dp"
+        app:mwhColorAlpha="0.45"
+        app:mwhStartColor="#FF9D93"
+        app:mwhCloseColor="#FF9D93"
+        tools:ignore="MissingConstraints"
+        app:mwhWaves="MultiWave">
+    </com.scwang.wave.MultiWaveHeader>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="#FF9D93"
+        android:layout_centerInParent="true"
+        android:foregroundGravity="center">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textStyle="italic"
+                android:layout_centerHorizontal="true"
+                android:text="Codagram"
+                android:layout_gravity="center" />
+
+            <View
+                android:layout_below="@id/logo"
+                android:layout_width="180dp"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:id="@+id/tvBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:textStyle="italic"
+                android:textColor="@color/white"
+                android:layout_centerHorizontal="true"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:text="From" />
+
+            <View
+                android:layout_below="@id/tvBy"
+                android:layout_width="180dp"
+                android:layout_height="1dp"
+                android:background="@color/white"/>
+
+
+            <TextView
+                android:layout_below="@+id/tvBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:layout_centerHorizontal="true"
+                android:padding="5dp"
+                android:textSize="20dp"
+                android:text="Osman And Volkan"/>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <com.scwang.wave.MultiWaveHeader
+        android:layout_width="180dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/cardTitle"
+        app:mwhVelocity="1"
+        app:mwhProgress="1"
+        app:mwhGradientAngle="45"
+        app:mwhWaveHeight="50dp"
+        app:mwhColorAlpha="0.45"
+        app:mwhStartColor="#FF86FC"
+        app:mwhCloseColor="#FF86FC"
+        tools:ignore="MissingConstraints"
+        app:mwhWaves="MultiWave">
+    </com.scwang.wave.MultiWaveHeader>
+
+
+
+</RelativeLayout>

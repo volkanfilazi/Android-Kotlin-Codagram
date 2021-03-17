@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="#FF9D93"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_margin="5dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivUserProfileImage"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:src="@drawable/person"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/resultText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="nickName"
+                        app:layout_constraintStart_toEndOf="@id/ivUserProfileImage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvUserNameMemberCards"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="italic"
+                        app:layout_constraintStart_toEndOf="@id/ivUserProfileImage"
+                        app:layout_constraintTop_toBottomOf="@id/resultText"
+                        android:text="@string/username"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvLastNameMemberCards"
+                        app:layout_constraintStart_toEndOf="@id/tvUserNameMemberCards"
+                        app:layout_constraintTop_toBottomOf="@id/resultText"
+                        android:text="@string/lastname"
+                        android:textStyle="italic"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/tvEmailMemberCards"
+                        app:layout_constraintTop_toBottomOf="@id/tvUserNameMemberCards"
+                        app:layout_constraintStart_toEndOf="@id/ivUserProfileImage"
+                        android:text="@string/emails"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

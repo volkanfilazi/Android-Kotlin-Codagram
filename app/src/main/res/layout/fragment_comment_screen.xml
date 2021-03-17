@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.homeFeedScreen.CommentScreenFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tvCommentTittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#FDF3F3"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:text="@string/kommentare"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCommentsRecyclerview"
+        android:background="#FDF3F3"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/tvCommentTittle"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        tools:listitem="@layout/comment_screen_items"/>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="#FF86FC"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toBottomOf="@id/rvCommentsRecyclerview">
+
+        <EditText
+            android:text="@string/kommentar"
+            android:textSize="10dp"
+            android:padding="5dp"
+            android:textColor="@color/white"
+            android:textStyle="italic"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardComment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="0dp"
+
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintEnd_toStartOf="@id/guidelineRight"
+        app:layout_constraintTop_toBottomOf="@id/cardTitle">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/etWriteComment"
+                android:layout_width="0dp"
+                android:textColor="#A6A6A6"
+                android:textColorHint="#A6A6A6"
+                android:hint="@string/schreibe_ein_kommentar"
+                android:textSize="15dp"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:padding="4dp"
+                android:layout_marginLeft="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnAdd"
+                android:background="@drawable/custom_edittext_comment_screen"
+                android:layout_height="wrap_content"/>
+
+            <ImageView
+                android:id="@+id/btnAdd"
+                android:src="@drawable/ic_baseline_send_24"
+                android:layout_width="wrap_content"
+                android:elevation="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

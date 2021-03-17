@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    android:label="Homefeed"
+    app:startDestination="@id/LoginScreen">
+
+    <fragment
+        android:id="@+id/TestFragment"
+        android:name="com.tailoredapps.codagram.ui.settings.TestFragment"
+        tool:layout="@layout/fragment_test2">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/CommentScreenFragment"
+        android:name="com.tailoredapps.codagram.ui.homeFeedScreen.CommentScreenFragment"
+        android:label="Kommentare"
+        tool:layout="@layout/fragment_comment_screen">
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/GroupDetailScreen"
+        android:name="com.tailoredapps.codagram.ui.groupscreen.GroupDetailsFragment"
+        android:label="Detailansicht"
+        tool:layout="@layout/fragment_group_details" >
+
+        <action
+            android:id="@+id/action_DetailScreen.TO.GROUP"
+            app:destination="@+id/thirdView" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/GroupScreen"
+        android:name="com.tailoredapps.codagram.ui.groupscreen.GroupFragment"
+        android:label="Gruppe Erstellen"
+        tool:layout="@layout/fragment_group">
+
+        <action
+            android:id="@+id/action_GroupScreen_to_GroupDetailScreens"
+            app:destination="@id/GroupDetailScreen" />
+
+        <action
+            android:id="@+id/action_GroupScreen_to_MyGroupScreen"
+            app:destination="@id/thirdView" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/LoginScreen"
+        android:name="com.tailoredapps.codagram.ui.loginscreen.LoginFragment"
+        android:label="Login View"
+        tool:layout="@layout/login_fragment">
+
+        <action
+            android:id="@+id/action_LoginToHome"
+            app:popUpToInclusive="true"
+            app:destination="@+id/firstView" />
+
+        <action
+            android:id="@+id/action_LoginToRegister"
+            app:destination="@+id/RegisterScreen" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/RegisterScreen"
+        android:name="com.tailoredapps.codagram.ui.loginscreen.RegisterFragment"
+        android:label="Login View"
+        tool:layout="@layout/register_fragment">
+        <action
+            android:id="@+id/action_LoginToHome"
+            app:destination="@+id/firstView" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/firstView"
+        android:name="com.tailoredapps.codagram.ui.HomeFeedScreen"
+        android:label="Homefeed"
+        tool:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_first_view_to_settings"
+            app:destination="@+id/settings" />
+
+        <action
+            android:id="@+id/action_first_view_to_login"
+            app:destination="@+id/LoginScreen"
+            app:popUpToInclusive="false"/>
+
+        <action
+            android:id="@+id/action_firstView_to_CommentScreenFragment"
+            app:destination="@id/CommentScreenFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondView"
+        android:name="com.tailoredapps.codagram.ui.newStoryScreen.NewStoryFragment"
+        android:label="Neue Story"
+        tool:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_secondView_to_firstView"
+            app:destination="@id/firstView" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/thirdView"
+        android:name="com.tailoredapps.codagram.ui.groupscreen.MyGroupScreen"
+        android:label="Gruppenansicht"
+        tool:layout="@layout/fragment_third">
+
+        <action
+            android:id="@+id/action_first_view_to_groupscreen"
+            app:destination="@+id/GroupScreen" />
+
+        <action
+            android:id="@+id/action_first_view_to_settings"
+            app:destination="@+id/settings" />
+
+        <action
+            android:id="@+id/action_group_view_to_groupdetails"
+            app:destination="@+id/GroupDetailScreen">
+
+
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.tailoredapps.codagram.ui.settings.SettingsFragment"
+        android:label="Settings"
+        tool:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings_to_TestFragment"
+            app:destination="@id/TestFragment" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_settings_view_to_login"
+        app:destination="@+id/LoginScreen">
+    </action>
+
+</navigation>
